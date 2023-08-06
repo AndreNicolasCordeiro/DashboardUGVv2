@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DASHBOARD UGV APP
 
-## Getting Started
+<table>
+<tr>
+<td>
+  Project under development for the bachelor's degree in software engineering, where I will create a dashboard for the student area of ​​the UGV college. Using various technologies such as NextJS, PostgreSQL, Next-Auth, Typescript, JWT, Prisma ORM and more.
+</td>
+</tr>
+</table>
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Here is a working live demo : IN PRODUCTION 🏗️
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## English
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Using various technologies such as NextJS, PostgreSQL, Next-Auth, Typescript, JWT, Prisma ORM, NodeJs and much more to create Front-End, Back-End and Database.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The development of a vision document project prepared during the course was applied, which aims to explain and document all stages of the application process, as well as tables of use cases.
 
-## Learn More
+The project brings route authentication, JWT protection to each user and Bcrypt to ensure the protection and non-violation of data involved.
 
-To learn more about Next.js, take a look at the following resources:
+The project is under development and the next step will be to build the visual part of the Front-End using TailwindCss to make it more efficient and aesthetically more harmonious and minimalist.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Português
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Utilizando diversas tecnologias como NextJS, PostgreSQL, Next-Auth, Typescript, JWT, Prisma ORM, NodeJs e muito mais para criar Front-End, Back-End e Banco de Dados.
 
-## Deploy on Vercel
+Foi aplicado o desenvolvimento de um projeto de documento de visão elaborado durante o curso, que visa explicar e documentar todas as etapas do processo, bem como tabelas de casos de uso.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O projeto traz autenticação de rota, proteção JWT para cada usuário e Bcrypt para garantir a proteção e não violação dos dados envolvidos.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+O projeto está em desenvolvimento e o próximo passo será construir a parte visual do Front-End utilizando TailwindCss para torná-lo mais eficiente e esteticamente mais harmonioso e minimalista.
+
+Desenvolvido por: [André Nicolas Cordeiro ](https://www.instagram.com/andrencordeiro/)
