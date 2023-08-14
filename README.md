@@ -1,6 +1,6 @@
-<img src="./SITEUGV.gif"/>
-
 # DASHBOARD UGV APP
+
+<img src="/SITEUGV.gif"/>
 
 <table>
 <tr>
