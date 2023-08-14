@@ -1,4 +1,4 @@
-![Gif da página inicial](/SITEUGV.gif)
+<img src="./SITEUGV.gif"/>
 
 # DASHBOARD UGV APP
 
