@@ -77,12 +77,12 @@ export default function Home() {
                 cy="512"
                 r="512"
                 fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-                fill-opacity="0.8"
+                fillOpacity="0.8"
               />
               <defs>
                 <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                  <stop stop-color="#E5A303" />
-                  <stop offset="1" stop-color="#204B9A" />
+                  <stop stopColor="#E5A303" />
+                  <stop offset="1" stopColor="#204B9A" />
                 </radialGradient>
               </defs>
             </svg>

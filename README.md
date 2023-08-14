@@ -1,3 +1,5 @@
+![Gif da página inicial](/SITEUGV.gif)
+
 # DASHBOARD UGV APP
 
 <table>
