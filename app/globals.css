@@ -1,27 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+body {
+  background-color: #000000;
+}
+.containerblock{
+  transform: rotateX(75deg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.blockhero-background {
+  --right: #E5A303;
+  --left: #204B9A;
+  position: absolute;
+  width: 200vw;
+  margin-left: -50%;
+  transform: translateY(0);
+  background-image: linear-gradient(to right,var(--left) 45%,transparent 50%,var(--right) 55%);
+  
+  -webkit-mask-image: linear-gradient(90deg,#000 2px,transparent 0),linear-gradient(180deg,#000 2px,transparent 0);
+  mask-image: linear-gradient(90deg,#000 2px,transparent 0),linear-gradient(180deg,#000 2px,transparent 0);
+  -webkit-mask-size: 90px 90px;
+  mask-size: 60px 60px;
+  
+  overflow: hidden;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: -100% 0;
+  background-position-y: 100%;
+  -webkit-mask-position: 50% 0;
+  mask-position: 50% 0;
+  animation: backgroundHero 60s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.block-background_container{
+  position: absolute;
+    z-index: -6;
+    overflow: hidden;
+    inset: 0;
+}
+
+@keyframes backgroundHero {
+  0% {
+      transform: translateY(0)
+  }
+
+  to {
+      transform: translateY(calc(50% + 28px))
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.lightsblackbottom::after{
+  content: "";
+  position: absolute;
+  filter: blur(6rem);
+ }
+ 
+ .lightsblackbottom::after{
+   
+   width: 100%;
+   height: 422px;
+   right: 0;
+   top: 82%;
+   background: linear-gradient(180deg,#000000,#000000);
+ }
+
+
+
+
+.lightsblack::before{
+ content: "";
+ position: absolute;
+ filter: blur(5rem);
+}
+
+.lightsblack::before{
+  width: 100%;
+  height: 422px;
+  top: 20%;
+  background: linear-gradient(180deg,#000000,#000000);
+  
+ }
+ 
+.lightsblack::after{
+ content: "";
+ position: absolute;
+ filter: blur(5rem);
+}
+
+.lightsblack::after{
+  
+  width: 100%;
+  height: 422px;
+  right: 0;
+  top: 10%;
+  background: linear-gradient(180deg,#000000,#000000);
+}
+
+.lights::after{
+  content: "";
+    position: absolute;
+    pointer-events: none;
+    filter: blur(125px);
+    mix-blend-mode: normal;
+}
+
+.lights::before{
+  content: "";
+    position: absolute;
+    pointer-events: none;
+    filter: blur(100rem);
+    mix-blend-mode: normal;
+}
+
+.lights::before{
+  z-index: 200;
+  width: 12%;
+  height: 900px;
+  right: 6%;
+  top: calc(50% - 900px / 2 + 151px);
+  background-image: linear-gradient(180deg,#dfc4862d,#E5A303);
+  transform: rotate(15deg);
+  border-bottom-left-radius: 25% 25%;
+  border-bottom-right-radius: 25% 25%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  opacity: .2;
+  overflow: hidden;
+}
+.lights::after{
+  width: 40%;
+  height: 422px;
+  right: 0;
+  top: calc(50% - 422px / 2 + 298px);
+  opacity: .25;
+  background: linear-gradient(180deg,#dfc486c2,#E5A303);
+  transform: matrix(-1,0,0,1,0,0);
+}
+
+
+
+
+.lightsleft::after{
+  content: "";
+    position: absolute;
+    pointer-events: none;
+    filter: blur(125px);
+    mix-blend-mode: normal;
+}
+
+.lightsleft::before{
+  content: "";
+    position: absolute;
+    pointer-events: none;
+    filter: blur(505px);
+    mix-blend-mode: normal;
+}
+
+.lightsleft::before{
+  z-index: 200;
+  width: 12%;
+  height: 900px;
+  right: 6%;
+  top: calc(50% - 900px / 2 + 151px);
+  background-image: linear-gradient(180deg,#204b9ae3,#204B9A);
+  transform: rotate(15deg);
+  border-bottom-left-radius: 25% 25%;
+  border-bottom-right-radius: 25% 25%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  opacity: .2;
+  overflow: hidden;
+}
+.lightsleft::after{
+  width: 40%;
+  height: 422px;
+  right: 70%;
+  top: calc(50% - 422px / 2 + 298px);
+  opacity: .25;
+  background: linear-gradient(180deg,#204b9ae3,#204B9A);
+  transform: matrix(-1,0,0,1,0,0);
 }

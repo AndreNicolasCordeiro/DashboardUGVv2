@@ -11,11 +11,20 @@ datasource db {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
+  id       Int         @id @default(autoincrement())
+  email    String      @unique
   password String
-  name     String?
+  name     String
   posts    Post[]
+  cursos   UserCurse[]
+  color    String?
+}
+
+enum Role {
+  PROFESSOR
+  ADMIN
+  ALUNO
+  COORDENADOR
 }
 
 model Post {
@@ -25,4 +34,39 @@ model Post {
   published Boolean @default(false)
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
+}
+
+model Calendar {
+  id_calendario Int      @id @default(autoincrement())
+  title         String
+  description   String?
+  startDate     DateTime
+  endDate       DateTime
+}
+
+model UserCurse {
+  id          Int           @id @default(autoincrement())
+  aluno       User          @relation(fields: [alunoId], references: [id])
+  alunoId     Int
+  curso       Curse         @relation(fields: [cursoId], references: [id_curse])
+  cursoId     Int
+  role        Role
+  evaluations evaluations[]
+}
+
+model Curse {
+  id_curse    Int           @id @default(autoincrement())
+  title       String
+  description String?
+  alunos      UserCurse[]
+  evaluations evaluations[]
+}
+
+model evaluations {
+  id      Int       @id @default(autoincrement())
+  nota    Float
+  aluno   UserCurse @relation(fields: [alunoId], references: [id])
+  alunoId Int
+  curso   Curse     @relation(fields: [cursoId], references: [id_curse])
+  cursoId Int
 }

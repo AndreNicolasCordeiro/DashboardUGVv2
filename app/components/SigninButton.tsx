@@ -16,9 +16,11 @@ const SigninButton = () => {
     );
   }
   return (
-    <button onClick={() => signIn()} className="text-green-600 ml-auto">
-      Sign In
-    </button>
+    <div className=" border-custom-gray border rounded-md pl-4 pr-4 pb-1 pt-1 hover:border-green-800">
+      <button onClick={() => signIn()} className="text-white ml-auto">
+        Entrar
+      </button>
+    </div>
   );
 };
 
