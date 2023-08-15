@@ -1,7 +1,5 @@
 # DASHBOARD UGV APP
 
-<img src="./public/SITEUGV.gif" />
-
 <table>
 <tr>
 <td>
