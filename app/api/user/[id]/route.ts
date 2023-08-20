@@ -1,5 +1,25 @@
 import { verifyJwt } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
+import { NextRequest } from "next/server";
+
+export async function GET(request: Request, { params }: { params: { id: number } }) {
+  // ... verificação de autenticação aqui ...
+
+  const userPosts = await prisma.post.findMany({
+    where: { authorId: +params.id },
+    select: {
+      id: true,
+      title: true,
+      content: true,
+    },
+  });
+
+  return new Response(JSON.stringify(userPosts), { headers: { "Content-Type": "application/json" } });
+}
+
+
+/* import { verifyJwt } from "@/lib/jwt";
+import prisma from "@/lib/prisma";
 
 export async function GET(request:Request, {params}:{params:{id: number}}){
 
@@ -27,4 +47,4 @@ export async function GET(request:Request, {params}:{params:{id: number}}){
     })
 
     return new Response(JSON.stringify(userPosts));
-}
+} */
