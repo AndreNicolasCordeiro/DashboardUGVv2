@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-custom-bg-black border-b-rem border-custom-gray p-4 max-[768px]:hidden">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <div className=" hover:opacity-70 z-50">
+          <div className="hover:opacity-70 z-50">
             <Image
               src={"/logougv.png"}
               alt={"logo-ugv"}
@@ -30,8 +30,11 @@ const Navbar: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-custom-color-blue">
-                Construção
+              <a
+                href="/dashboard"
+                className="text-white hover:text-custom-color-blue"
+              >
+                Dashboard
               </a>
             </li>
             <li>

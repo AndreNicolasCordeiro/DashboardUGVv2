@@ -3,9 +3,12 @@
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 
+import Navbar from "./components/Navbar";
+
 export default function Home() {
   return (
     <>
+      <Navbar />
       <main className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 lg:px-16 xl:px-20 ">
         <h1 className="text-3xl font-bold tracking-tight text-white sm:text-6xl uppercase font-poppins text-center max-w-2xl z-50">
           Dashboard UGV
@@ -18,7 +21,7 @@ export default function Home() {
           onClick={() => signIn()}
           className="animate-border inline-block rounded-lg bg-gray-00 from-blue-800 to-yellow-500 bg-[length:400%_400%] p-0.5 [animation-duration:_2s] hover:bg-gradient-to-r dark:bg-gray-800 z-50"
         >
-          <span className="block rounded-md bg-white pr-10 pl-10 pt-2 pb-2 text-sm font-medium text-gray-900 dark:bg-custom-bg-black dark:text-white">
+          <span className="block rounded-md bg-white pr-10 pl-10 pt-2 pb-2 text-sm font-medium text-dark dark:bg-custom-bg-black">
             Entrar
           </span>
         </button>
@@ -121,7 +124,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="mx-auto text-center">
+      <section className="mx-auto text-center mb-[500px]">
         <div className="text-blue-600 text-xl mb-1">Quais</div>
         <div className=" text-white text-3xl font-bold sm:text-4xl">
           Tecnologias Utilizadas
@@ -188,14 +191,14 @@ export default function Home() {
           <div className="bg-white p-[3.5rem] rounded-lg">
             <div className=" w-[50px] h-[30px]">
               <Image
-                src={"/tailwindicon.png"}
+                src={"/JWT.png"}
                 alt={"Icone do TailwindCss"}
                 height={55}
                 width={55}
               />
             </div>
             <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              TailwindCss
+              JWT
             </h4>
             <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
@@ -206,14 +209,14 @@ export default function Home() {
           <div className="bg-white p-[3.5rem] rounded-lg">
             <div className=" w-[50px] h-[30px]">
               <Image
-                src={"/nexticon.png"}
+                src={"/YARN.png"}
                 alt={"Icone do TailwindCss"}
                 height={55}
                 width={55}
               />
             </div>
             <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              NextJs
+              Yarn
             </h4>
             <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
@@ -224,14 +227,68 @@ export default function Home() {
           <div className="bg-white p-[3.5rem] rounded-lg">
             <div className=" w-[50px] h-[30px]">
               <Image
-                src={"/typescripticon.png"}
+                src={"/NextAuth.png"}
                 alt={"Icone do TailwindCss"}
                 height={55}
                 width={55}
               />
             </div>
             <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              TypeScript
+              NextAuth.js
+            </h4>
+            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              enim sem, fringilla tempor id risus. Ut in viverra metus.
+            </p>
+          </div>
+
+          <div className="bg-white p-[3.5rem] rounded-lg">
+            <div className=" w-[50px] h-[30px]">
+              <Image
+                src={"/Bcrypt.jpg"}
+                alt={"Icone do TailwindCss"}
+                height={55}
+                width={55}
+              />
+            </div>
+            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
+              Bcrypt
+            </h4>
+            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              enim sem, fringilla tempor id risus. Ut in viverra metus.
+            </p>
+          </div>
+
+          <div className="bg-white p-[3.5rem] rounded-lg">
+            <div className=" w-[50px] h-[30px]">
+              <Image
+                src={"/VisualStudio.png"}
+                alt={"Icone do TailwindCss"}
+                height={55}
+                width={55}
+              />
+            </div>
+            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
+              Visual Studio
+            </h4>
+            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              enim sem, fringilla tempor id risus. Ut in viverra metus.
+            </p>
+          </div>
+
+          <div className="bg-white p-[3.5rem] rounded-lg">
+            <div className=" w-[50px] h-[30px]">
+              <Image
+                src={"/Ubuntu.png"}
+                alt={"Icone do TailwindCss"}
+                height={55}
+                width={55}
+              />
+            </div>
+            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
+              Ubuntu
             </h4>
             <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
@@ -239,7 +296,172 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <div className="overflow-hidden bg-custom-bg-black py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+              <div className="lg:pr-8 lg:pt-4">
+                <div className="lg:max-w-lg">
+                  <h2 className="text-base font-semibold leading-7 text-indigo-600">
+                    Dashboard
+                  </h2>
+                  <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    Um fluxo melhor de estudo
+                  </p>
+                  <p className="mt-6 text-lg leading-8 text-white">
+                    Lorem ipsum, dolor sit amet consetetetetur elit adipisicing.
+                    Maiores impedem perferendis suscipit eaque, iste dolor
+                    cupiditate blanditiis ratione.
+                  </p>
+                  <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-white lg:max-w-none">
+                    <div className="relative pl-9">
+                      <dt className="inline font-semibold text-white"></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <img
+                src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+                alt="Product screenshot"
+                className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+                width="2432"
+                height="1442"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white py-24 sm:py-32">
+          <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Texto01
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Libero fames augue nisl porttitor nisi, quis. Id ac elit odio
+                vitae elementum enim vitae ullamcorper suspendisse.
+              </p>
+            </div>
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Texto02
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Libero fames augue nisl porttitor nisi, quis. Id ac elit odio
+                vitae elementum enim vitae ullamcorper suspendisse.
+              </p>
+            </div>
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Texto03
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Libero fames augue nisl porttitor nisi, quis. Id ac elit odio
+                vitae elementum enim vitae ullamcorper suspendisse.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className=" bg-custom-bg-black py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+              <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt className="text-base leading-7 text-gray-600">
+                  Transactions every 24 hours
+                </dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight  text-white sm:text-5xl">
+                  44 million
+                </dd>
+              </div>
+              <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt className="text-base leading-7 text-gray-600">
+                  Assets under holding
+                </dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight  text-white sm:text-5xl">
+                  $119 trillion
+                </dd>
+              </div>
+              <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt className="text-base leading-7 text-gray-600">
+                  New users annually
+                </dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight  text-white sm:text-5xl">
+                  46,000
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
       </section>
+
+      <footer className="bg-black text-white">
+        <div className="flex flex-wrap">
+          <div className="lg:w-1/4 md:w-1/2 w-full p-4">
+            <div className="p-8 rounded-xl">
+              <h4 className="mb-2 text-lg font-semibold">Title</h4>
+              <a className="text-base">
+                {/* <div className="bg-white p-[3.5rem] rounded-lg"> */}
+                <div>
+                  <Image
+                    src={"/instagramnotback.png"}
+                    alt={"Icone do TailwindCss"}
+                    height={30}
+                    width={30}
+                    className=""
+                  />
+                </div>
+                {/* </div> */}
+              </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+            </div>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full p-4">
+            <div className="p-8 rounded-xl">
+              <h4 className="mb-2 text-lg font-semibold">Title</h4>
+              <a className="text-base"> Link Text</a>
+              <br />
+              <a className="text-base"> Link Text </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+            </div>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full p-4">
+            <div className="p-8 rounded-xl">
+              <h4 className="mb-2 text-lg font-semibold">Title</h4>
+              <a className="text-base"> Link Text</a>
+              <br />
+              <a className="text-base"> Link Text </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+              <br />
+              <a className="text-base"> Link Text </a>
+            </div>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full p-4">
+            <div className="p-8 rounded-xl">
+              <h4 className="mb-2 text-lg font-semibold">More Info</h4>
+              <p className="text-base">
+                {" "}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                recusandae libero possimus culpa quod{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div className="px-12 py-2">
+          <p className="text-sm">
+            © 2023 <a href="https://uniao.ugv.edu.br">CodeBusters</a>. All
+            rights reserved
+          </p>
+        </div>
+      </footer>
     </>
   );
 }

@@ -50,10 +50,18 @@ const UserPostPage = () => {
     }
   };
 
-  const handleEdit = (post: Post) => {
-    setEditingPost(post);
-  };
+  const [editingPosts, setEditingPosts] = useState<{ [postId: number]: Post }>(
+    {}
+  );
 
+  const handleEdit = (post: Post) => {
+    setEditingPosts((prevEditingPosts) => ({
+      ...prevEditingPosts,
+      [post.id]: {
+        ...post,
+      },
+    }));
+  };
   const handleUpdate = async (
     postId: number,
     title: string,
@@ -96,47 +104,58 @@ const UserPostPage = () => {
     }
   };
 
-  const handleCancelEdit = () => {
-    setEditingPost({ id: 0, title: "", content: "" });
+  const handleCancelEdit = (postId: number) => {
+    setEditingPosts((prevEditingPosts) => {
+      const updatedEditingPosts = { ...prevEditingPosts };
+      delete updatedEditingPosts[postId];
+      return updatedEditingPosts;
+    });
   };
 
   return (
     <div>
       {userPosts.map((post) => (
         <div key={post.id}>
-          {editingPost.id !== 0 ? (
+          {editingPosts[post.id] ? (
             <div>
               <input
                 type="text"
-                value={editingPost.title}
+                value={editingPosts[post.id].title}
                 onChange={(e) =>
-                  setEditingPost((prevEditingPost) => ({
-                    ...prevEditingPost,
-                    title: e.target.value,
+                  setEditingPosts((prevEditingPosts) => ({
+                    ...prevEditingPosts,
+                    [post.id]: {
+                      ...prevEditingPosts[post.id],
+                      title: e.target.value,
+                    },
                   }))
                 }
               />
               <textarea
-                value={editingPost.content}
+                value={editingPosts[post.id].content}
                 onChange={(e) =>
-                  setEditingPost((prevEditingPost) => ({
-                    ...prevEditingPost,
-                    content: e.target.value,
+                  setEditingPosts((prevEditingPosts) => ({
+                    ...prevEditingPosts,
+                    [post.id]: {
+                      ...prevEditingPosts[post.id],
+                      content: e.target.value,
+                    },
                   }))
                 }
               />
               <button
+                className="text-white"
                 onClick={() =>
                   handleUpdate(
-                    editingPost.id,
-                    editingPost.title,
-                    editingPost.content
+                    post.id,
+                    editingPosts[post.id].title,
+                    editingPosts[post.id].content
                   )
                 }
               >
                 Update
               </button>
-              <button onClick={handleCancelEdit}>Cancel</button>
+              <button onClick={() => handleCancelEdit(post.id)}>Cancel</button>
             </div>
           ) : (
             <div>
@@ -145,7 +164,6 @@ const UserPostPage = () => {
               <button className="text-white" onClick={() => handleEdit(post)}>
                 Edit
               </button>
-
               <button
                 className="text-white"
                 onClick={() => handleDelete(post.id)}

@@ -17,6 +17,7 @@ module.exports = {
         '50%': { backgroundPosition: '100% 50%' },
       },
     },
+
     
     extend: {
       fontFamily: {
@@ -30,14 +31,14 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       backgroundColor: {
-        'custom-bg-black': '#000000',
+        'custom-bg-black': 'linear-gradient(105deg, #0c0d13 0%, #131316 101.42%);',
        
       },
       borderWidth: {
         'rem': '0.1rem'
       },
       borderColor: {
-        'custom-gray': '#212529',
+        'custom-gray': '#27272a',
       },
       colors: {
         'custom-color-blue': '#0096FF'

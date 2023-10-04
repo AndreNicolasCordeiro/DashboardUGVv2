@@ -6,7 +6,8 @@
 
 
 body {
-  background-color: #000000;
+  background: linear-gradient(105deg, #1d1e24 0%, #131316 100%);
+  
 }
 .containerblock{
   transform: rotateX(75deg);
