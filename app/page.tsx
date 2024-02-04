@@ -5,7 +5,80 @@ import Image from "next/image";
 
 import Navbar from "./components/Navbar";
 
-export default function Home() {
+interface ItemProps {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+}
+
+const itemsData: ItemProps[] = [
+  {
+    src: "/tailwindicon.png",
+    alt: "Imagem 1",
+    title: "Tailwind",
+    description:
+      "Simplifique o desenvolvimento de UI com o Tailwind, um framework CSS utilitário que permite criar designs elegantes com classes pré-definidas.",
+  },
+  {
+    src: "/typescripticon.png",
+    alt: "Imagem 2",
+    title: "Typescript",
+    description:
+      "Eleve a robustez do seu código com TypeScript, uma linguagem de programação que adiciona tipagem estática ao JavaScript, facilitando a detecção de erros antes da execução.",
+  },
+  {
+    src: "/yarn.png",
+    alt: "Imagem 2",
+    title: "Yarn",
+    description:
+      "Gerencie suas dependências JavaScript de forma eficiente com o Yarn, um gerenciador de pacotes que oferece desempenho aprimorado e recursos de segurança.",
+  },
+  {
+    src: "/ubuntu.png",
+    alt: "Imagem 2",
+    title: "Ubuntu",
+    description:
+      "Experimente a potência do Ubuntu, um sistema operacional de código aberto baseado no Linux, conhecido por sua estabilidade e facilidade de uso.",
+  },
+  {
+    src: "/visualcode.webp",
+    alt: "Imagem 2",
+    title: "Visual Code",
+    description:
+      "Maximize a produtividade do desenvolvedor com o Visual Studio Code, um editor de código leve e extensível, repleto de recursos e suporte para diversas linguagens.",
+  },
+  {
+    src: "/nexticon.png",
+    alt: "Imagem 2",
+    title: "Nextjs",
+    description:
+      "Desenvolva aplicações web modernas e escaláveis com o Next.js, um framework React que simplifica o processo de criação e renderização de páginas.",
+  },
+  {
+    src: "/nextauth.jpg",
+    alt: "Imagem 2",
+    title: "Next Auth",
+    description:
+      "Adicione autenticação fácil e segura às suas aplicações Next.js com o Next Auth, simplificando a implementação de fluxos de login social e autenticação JWT.",
+  },
+  {
+    src: "/jwt.png",
+    alt: "Imagem 2",
+    title: "JWT",
+    description:
+      "Garanta a segurança na comunicação entre serviços com JWT, uma técnica de autenticação que permite transmitir informações de forma assinada e criptografada em formato JSON.",
+  },
+  {
+    src: "/bcrypt.png",
+    alt: "Imagem 2",
+    title: "Bcrypt",
+    description:
+      "Proteja as senhas em suas aplicações com Bcrypt, um algoritmo de hash projetado para ser lento e resistente a ataques de força bruta, proporcionando maior segurança.",
+  },
+];
+
+const Home: React.FC<ItemProps> = ({ src, alt, title, description }) => {
   return (
     <>
       <Navbar />
@@ -125,176 +198,31 @@ export default function Home() {
         </div>
       </div>
       <section className="mx-auto text-center mb-[500px]">
-        <div className="text-blue-600 text-xl mb-1">Quais</div>
-        <div className=" text-white text-3xl font-bold sm:text-4xl">
+        <div className="text-blue-600 text-xl mb-2 sm:text-2xl lg:text-3xl">
+          Quais
+        </div>
+        <div className="text-white text-3xl font-bold sm:text-4xl lg:text-5xl">
           Tecnologias Utilizadas
         </div>
-        <div className="mt-2 text-lg leading-8 text-gray-300">
+        <div className="mt-2 text-lg leading-8 text-gray-300 sm:text-xl">
           No projeto Dashboard UGV?
         </div>
 
-        <div className="grid grid-cols-3 px-[10rem] pt-[5rem] gap-10">
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/tailwindicon.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-start items-start mt-5">
+          {itemsData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white flex flex-col justify-start items-start gap-5 py-5 px-5 rounded-lg w-[30rem] mx-auto sm:w-[90%] h-[20rem]"
+            >
+              <div className="w-[50px] h-[50px] flex items-center justify-center">
+                <Image src={item.src} alt={item.alt} height={55} width={55} />
+              </div>
+              <h4 className="text-black text-[1.8rem] pt-4">{item.title}</h4>
+              <p className="text-left text-lg text-gray-700">
+                {item.description}
+              </p>
             </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              TailwindCss
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/nexticon.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              NextJs
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/typescripticon.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              TypeScript
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/JWT.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              JWT
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/YARN.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              Yarn
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/NextAuth.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              NextAuth.js
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/Bcrypt.jpg"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              Bcrypt
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/VisualStudio.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              Visual Studio
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
-
-          <div className="bg-white p-[3.5rem] rounded-lg">
-            <div className=" w-[50px] h-[30px]">
-              <Image
-                src={"/Ubuntu.png"}
-                alt={"Icone do TailwindCss"}
-                height={55}
-                width={55}
-              />
-            </div>
-            <h4 className="text-black text-3xl font-bold sm:text-4xl text-start pt-8">
-              Ubuntu
-            </h4>
-            <p className="mt-3 text-lg leading-2 text-gray-700 text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              enim sem, fringilla tempor id risus. Ut in viverra metus.
-            </p>
-          </div>
+          ))}
         </div>
         <div className="overflow-hidden bg-custom-bg-black py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -464,4 +392,6 @@ export default function Home() {
       </footer>
     </>
   );
-}
+};
+
+export default Home;

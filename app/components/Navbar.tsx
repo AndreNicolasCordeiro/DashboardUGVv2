@@ -20,13 +20,8 @@ const Navbar: React.FC = () => {
           </div>
           <ul className="flex space-x-4 items-center z-50">
             <li>
-              <a href="#" className=" text-white hover:text-custom-color-blue">
+              <a href="/" className=" text-white hover:text-custom-color-blue">
                 Início
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-white hover:text-custom-color-blue">
-                Sobre
               </a>
             </li>
             <li>
@@ -39,10 +34,10 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <Link
-                href={"/UserPost"}
+                href={"/Annotation"}
                 className="text-white hover:text-custom-color-blue"
               >
-                User Posts
+                Anotações
               </Link>
             </li>
             <SigninButton />
